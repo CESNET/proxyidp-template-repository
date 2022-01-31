@@ -1,0 +1,23 @@
+{
+  "name": "proxyidp-template-repository",
+  "description": "Template repository for CESNET ProxyIdP projects hosted on GitHub",
+  "license": "BSD-2-Clause",
+  "private": true,
+  "engines": {
+    "node": "^14 || ^16",
+    "npm": "^5 || ^6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "semantic-release": "^19.0.2"
+  }
+}

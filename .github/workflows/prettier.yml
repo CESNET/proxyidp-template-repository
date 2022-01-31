@@ -1,0 +1,41 @@
+name: Prettier
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+    paths:
+      - "**.css"
+      - "**.js"
+      - "**.jsx"
+      - "**.ts"
+      - "**.less"
+      - "**.sass"
+      - "**.html"
+      - "**.md"
+      - "**.json"
+      - "**.yml"
+      - "**.yaml"
+
+jobs:
+  release:
+    name: prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install npm modules
+        run: npm ci
+      - name: Check with prettier
+        run: npx prettier --check .
